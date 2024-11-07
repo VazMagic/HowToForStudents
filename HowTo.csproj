@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC26D21A-DFFE-4240-98C1-B8DC5A11C6D1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HowTo</RootNamespace>
+    <AssemblyName>HowTo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.18.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.18.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.1\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OleDb, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.OleDb.8.0.1\lib\net462\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignPatterns\Repository\ILabRepository.cs" />
+    <Compile Include="DesignPatterns\Repository\LabAnalysisProcedure.cs" />
+    <Compile Include="DesignPatterns\Repository\LabAnalysisRepository.cs" />
+    <Compile Include="Events\UpdateCustomersEventArgs.cs" />
+    <Compile Include="Events\UpdateDataGridViewEventArgs.cs" />
+    <Compile Include="frmExportXLSXOrXMLData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportXLSXOrXMLData.designer.cs">
+      <DependentUpon>frmExportXLSXOrXMLData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCustomers.Designer.cs">
+      <DependentUpon>frmAddCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomers.Designer.cs">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExport.Designer.cs">
+      <DependentUpon>frmExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportData.Designer.cs">
+      <DependentUpon>frmExportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHowTo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHowTo.Designer.cs">
+      <DependentUpon>frmHowTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportTextFileData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportTextFileData.Designer.cs">
+      <DependentUpon>frmImportTextFileData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLabAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLabAnalysis.Designer.cs">
+      <DependentUpon>frmLabAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLabAnalysisAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLabAnalysisAdd.Designer.cs">
+      <DependentUpon>FrmLabAnalysisAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSecondForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSecondForm.Designer.cs">
+      <DependentUpon>frmSecondForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportExcelData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportExcelData.designer.cs">
+      <DependentUpon>frmImportExcelData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmImportXMLData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImportXMLData.designer.cs">
+      <DependentUpon>frmImportXMLData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurrentPath.cs" />
+    <Compile Include="Models\DbaseNames.cs" />
+    <Compile Include="Models\PersonsModel.cs" />
+    <Compile Include="Models\TitlesModel.cs" />
+    <Compile Include="Processes\ConvertObjects.cs" />
+    <Compile Include="frmData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmData.designer.cs">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processes\DataSetTableFunctions.cs" />
+    <Compile Include="Processes\ExportExcel.cs" />
+    <Compile Include="Processes\ExportXML.cs" />
+    <Compile Include="Processes\ImportExcel.cs" />
+    <Compile Include="Processes\ImportXML.cs" />
+    <Compile Include="Processes\TexFiletInputOutput.cs" />
+    <Compile Include="Processes\Utility.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmExportXLSXOrXMLData.resx">
+      <DependentUpon>frmExportXLSXOrXMLData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCustomers.resx">
+      <DependentUpon>frmAddCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomers.resx">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExport.resx">
+      <DependentUpon>frmExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportData.resx">
+      <DependentUpon>frmExportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHowTo.resx">
+      <DependentUpon>frmHowTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportTextFileData.resx">
+      <DependentUpon>frmImportTextFileData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLabAnalysis.resx">
+      <DependentUpon>frmLabAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLabAnalysisAdd.resx">
+      <DependentUpon>FrmLabAnalysisAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSecondForm.resx">
+      <DependentUpon>frmSecondForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportExcelData.resx">
+      <DependentUpon>frmImportExcelData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImportXMLData.resx">
+      <DependentUpon>frmImportXMLData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmData.resx">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Dbase\MSAccessDbaseDSN.dsn" />
+    <None Include="Dbase\sampledatainsurance.xlsx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Dbase\GuardiansOfTheGalaxy.txt" />
+    <Content Include="Dbase\NCSSLabDataMartAccess-Sample-Backup.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dbase\NCSSLabDataMartAccess-Sample.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dbase\sampledatainsurance.xml" />
+    <Content Include="NCSSLabDataMartAccess-Sample.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
