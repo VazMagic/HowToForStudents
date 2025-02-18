@@ -1,14 +1,11 @@
 ﻿using System.IO;
+using HowTo.Models;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Odbc;
 
 namespace HowTo.DesignPatterns.Repository
-{
-    using HowTo.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Data.Odbc;
-    using System.Data.OleDb;
-
+{    
     public class LabAnalysisRepository : ILabAnalysisRepository
     {
         private readonly string _connectionString;
