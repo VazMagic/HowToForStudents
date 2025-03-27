@@ -36,8 +36,8 @@ namespace HowTo.DesignPatterns.Repository
             using (var connection = new OdbcConnection(_connectionString))
             {
                 string query = @"SELECT LabAnalysisID, requested_anal_name, proced_name, proced_abbrev, proced_desc, 
-                                 SSIR_5_Page, PDF_pg, Links_to_SSIR_42_V_5, notes
-                                 FROM lab_analysis_procedure_table";
+                                            SSIR_5_Page, PDF_pg, Links_to_SSIR_42_V_5, notes
+                                            FROM lab_analysis_procedure_table";
 
                 using (var command = new OdbcCommand(query, connection))
                 {
